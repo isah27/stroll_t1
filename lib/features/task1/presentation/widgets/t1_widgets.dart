@@ -1,0 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stroll_t1/core/stroll_core.dart';
+import 'package:stroll_t1/config/stroll_configs.dart';
+import 'package:stroll_t1/global_widgets/global_widgets.dart';
+import 'package:stroll_t1/features/task1/data/repo/t1_assets.dart';
+import 'package:stroll_t1/features/task1/data/models/questiion_model.dart';
+import 'package:stroll_t1/features/task1/presentation/cubit/t_survey_cubit.dart';
+part 'src/room_detail.dart';
+part './src/header.dart';
+part './src/faded_container.dart';
+part './src/user_info_and_question.dart';
+part 'src/survey_options.dart';
+part './src/instruction_next_prev_button.dart';
