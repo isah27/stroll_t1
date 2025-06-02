@@ -45,6 +45,9 @@ class SingleOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
+    final selectedOption =
+        context.watch<TSurveyCubit>().currentQuestion?.selectedOption;
+    var isSelected = selectedOption == option;
     return InkWell(
       onTap: () {
         context.read<TSurveyCubit>().selectOption(option);
@@ -55,6 +58,10 @@ class SingleOptions extends StatelessWidget {
         decoration: BoxDecoration(
           color: Color(0xff232A2E),
           borderRadius: BorderRadius.circular(10),
+          border:
+              isSelected
+                  ? Border.all(color: StrollColors.primary, width: 2)
+                  : null,
         ),
         child: Row(
           spacing: 8,
@@ -62,14 +69,19 @@ class SingleOptions extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xffC4C4C4)),
+                color: isSelected ? StrollColors.primary : null,
+                border: Border.all(
+                  color: isSelected ? StrollColors.primary : Color(0xffC4C4C4),
+                ),
                 shape: BoxShape.circle,
               ),
-              child: AppText(
-                text: option.tag,
-                size: 12,
-                textAlign: TextAlign.center,
-                color: Color(0xffC4C4C4),
+              child: Center(
+                child: AppText(
+                  text: option.tag,
+                  size: 12,
+                  textAlign: TextAlign.center,
+                  color: isSelected ? Colors.white : Color(0xffC4C4C4),
+                ),
               ),
             ),
             Expanded(

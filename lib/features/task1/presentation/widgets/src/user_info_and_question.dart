@@ -7,28 +7,15 @@ class UserInfoAndQuestion extends StatelessWidget {
   Widget build(BuildContext context) {
     final question = context.watch<TSurveyCubit>().currentQuestion;
     return Row(
-      spacing: 5,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: Image.asset(T1Assets.zoey),
-        ),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 22),
               Padding(
-                padding: EdgeInsets.only(top: 5, bottom: 2),
-                child: AppText(
-                  text: "Angelina, 28",
-                  size: 11,
-                  fontWeight: FontWeight.w700,
-                  color: StrollColors.primalText,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 3),
+                padding: EdgeInsets.only(left: 60),
                 child: AppText(
                   text: question?.question ?? "",
                   size: 20,
@@ -37,6 +24,52 @@ class UserInfoAndQuestion extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class UserInfo extends StatelessWidget {
+  const UserInfo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Positioned(
+          right: -80,
+          top: 10,
+          child: Container(
+            padding: EdgeInsets.only(left: 50, right: 10, top: 5, bottom: 5),
+            decoration: BoxDecoration(
+              color: Color(0xff121517),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: AppText(
+              text: "Angelina, 28",
+              size: 11,
+              fontWeight: FontWeight.w700,
+              color: StrollColors.primalText,
+            ),
+          ),
+        ),
+
+        Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Color(0xff121517), width: 10),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: Image.asset(
+              T1Assets.zoey,
+              height: 50,
+              width: 50,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ],

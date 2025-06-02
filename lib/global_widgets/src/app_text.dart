@@ -9,6 +9,7 @@ class AppText extends StatelessWidget {
     this.fontWeight,
     this.textAlign,
     this.fontStyle,
+    this.shadows,
   });
 
   final String text;
@@ -17,6 +18,7 @@ class AppText extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
   final FontStyle? fontStyle;
+  final List<Shadow>? shadows;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class AppText extends StatelessWidget {
         fontWeight: fontWeight,
         fontFamily: StrollStyle.proximaNova,
         fontStyle: fontStyle,
+        shadows: shadows,
       ),
     );
   }

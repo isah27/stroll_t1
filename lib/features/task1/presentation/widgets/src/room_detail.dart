@@ -28,12 +28,15 @@ class IConWithLabel extends StatelessWidget {
       spacing: 3,
       children: [
         iconPath.svg(color: StrollColors.white),
-        AppText(
-          text: label,
-          color: StrollColors.white,
-          size: 12,
-          fontWeight: FontWeight.w600,
-          textAlign: TextAlign.end,
+        Padding(
+          padding: EdgeInsets.only(top: 3),
+          child: AppText(
+            text: label,
+            color: StrollColors.white,
+            size: 12,
+            fontWeight: FontWeight.w600,
+            textAlign: TextAlign.end,
+          ),
         ),
       ],
     );
