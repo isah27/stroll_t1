@@ -8,7 +8,6 @@ import 'package:stroll_t1/features/task1/data/models/questiion_model.dart';
 import 'package:stroll_t1/features/task1/presentation/cubit/t_survey_cubit.dart';
 part 'src/room_detail.dart';
 part './src/header.dart';
-part './src/faded_container.dart';
 part './src/user_info_and_question.dart';
 part 'src/survey_options.dart';
 part './src/instruction_next_prev_button.dart';
